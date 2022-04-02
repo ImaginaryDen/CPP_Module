@@ -11,7 +11,7 @@ private:
 	Contact	contacts[MAX_CONTACTS];
 	int		amount;
 public:
-	PhoneBook(/* args */);
+	PhoneBook();
 	~PhoneBook();
 
 	void	add_contact(void);

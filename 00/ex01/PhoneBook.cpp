@@ -10,7 +10,6 @@ void PhoneBook::add_contact()
 {
 	amount %= MAX_CONTACTS;
 	amount++;
-	std::cout << amount;
 	for (int i = 0; i < FIELD_SIZE; i++)
 	{
 		std::string input_info;
@@ -36,7 +35,8 @@ void	PhoneBook::search_contact(void)
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
-	for (int count_contact = 0; contacts[count_contact].get_field(0) != ""; count_contact++)
+	for (int count_contact = 0; count_contact < MAX_CONTACTS
+		&& contacts[count_contact].get_field(0) != ""; count_contact++)
 	{
 		std::cout << "|";
 		std::cout.width(10);

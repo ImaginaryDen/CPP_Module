@@ -21,6 +21,7 @@ public:
 
 	void		set_field(std::string info, int index);
 	std::string	get_field(int index);
+	std::string	get_field(std::string name_field);
 	static std::string	get_name_field(int index);
 };
 
