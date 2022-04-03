@@ -1,6 +1,6 @@
 NAME		=	bureaucrat
 
-SRC 		=	$(shell ls *cpp)
+SRC 		=	$(shell ls *cpp) $(shell ls sources/*cpp)
 OBJS_DIR 	= 	./objects/
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(SRC:.cpp=.o))
 
