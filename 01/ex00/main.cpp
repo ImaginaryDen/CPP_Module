@@ -6,7 +6,7 @@ int	main()
 	Zombie z_stack("pupa");
 	randomChump("biba");
 
-	z_heap->announcement();
-	z_stack.announcement();
+	z_heap->announce();
+	z_stack.announce();
 	delete z_heap;
 }

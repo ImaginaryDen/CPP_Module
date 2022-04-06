@@ -8,12 +8,12 @@ int	main(void)
 	string	*stringPTR = &str;
 	string	&stringREF = str;
 
-	cout  << "address str - " << &str << "\n";
-	cout  << "address stringPTR - " << stringPTR << "\n";
-	cout  << "address stringREF - " << &stringREF << "\n";
+	cout  << "address str\t\t- " << &str << "\n";
+	cout  << "address stringPTR\t- " << stringPTR << "\n";
+	cout  << "address stringREF\t- " << &stringREF << "\n";
 
-	cout  << "value str - " << str << "\n";
-	cout  << "value stringPTR - " << stringPTR << "\n";
-	cout  << "value stringREF - " << stringREF << "\n";
+	cout  << "value str\t\t- " << str << "\n";
+	cout  << "value stringPTR\t\t- " << *stringPTR << "\n";
+	cout  << "value stringREF\t\t- " << stringREF << "\n";
 	
 }

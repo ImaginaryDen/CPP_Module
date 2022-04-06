@@ -1,10 +1,10 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char **argv)
 {
-	Karen karen;
+	Harl Harl;
 
 	if (argc > 1)
-		karen.complain(argv[1]);
+		Harl.complain(argv[1]);
 	return 0;
 }

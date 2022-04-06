@@ -3,17 +3,15 @@
 #include <string>
 #include <iostream>
 
-class Karen
+class Harl
 {
 private:
 	void    debug( void );
 	void    info( void );
 	void    warning( void );
 	void    error( void );
+	void	defaultAnswer(void);
 
 public:
-	Karen();
-	~Karen();
-
 	void complain( std::string level );
 };

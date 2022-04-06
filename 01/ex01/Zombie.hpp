@@ -11,7 +11,7 @@ class Zombie
 private:
 	string	name;
 public:
-	void	announcement(void);
+	void	announce(void);
 	void	set_name(string name);
 	Zombie(string name);
 	Zombie();

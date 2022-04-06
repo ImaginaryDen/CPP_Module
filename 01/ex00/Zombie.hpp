@@ -11,8 +11,8 @@ class Zombie
 private:
 	string	name;
 public:
-	void	announcement(void);
-	Zombie(string name);
+	void	announce(void);
+	Zombie(string name = "dead man");
 	~Zombie();
 };
 

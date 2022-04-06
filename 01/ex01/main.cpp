@@ -8,7 +8,7 @@ int	main(int argc, char**argv)
 		return (1);
 	the_Horde = zombieHorde(10, argv[1]);
 	for (int i = 0; i < 10; i++)
-		the_Horde[i].announcement();
+		the_Horde[i].announce();
 	std::cout << std::endl;
 	delete[] the_Horde;
 }
