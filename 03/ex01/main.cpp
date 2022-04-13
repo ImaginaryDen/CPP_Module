@@ -2,12 +2,14 @@
 
 int		main()
 {
-	ScavTrap	scavtrap;
+	ClapTrap	claptrap("Pupa");
 
-	scavtrap.takeDamage(5);
-	scavtrap.beRepaired(5);
-	scavtrap.attack("lalka");
-	scavtrap.takeDamage(7);
-	scavtrap.beRepaired(7);
+	for (size_t i = 0; i < 11; i++)
+		claptrap.attack("void");
+
+	ScavTrap	scavtrap("Biba");
+
+	scavtrap.attack("Boba");
+	scavtrap.beRepaired(10);
 	scavtrap.guardGate();
 }

@@ -8,8 +8,8 @@ class ClapTrap
 protected:
 	std::string		_name;
 	int				_hit_points;
-	unsigned int	_energy_points;
-	unsigned int	_attack_damage;
+	int				_energy_points;
+	int				_attack_damage;
 
 public:
 	ClapTrap();
