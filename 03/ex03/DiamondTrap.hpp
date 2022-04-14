@@ -18,5 +18,5 @@ public:
 	~DiamondTrap();
 	
 	void	whoAmI();
-	void    attack(const std::string& target);
+	void	attack(const std::string& target);
 };

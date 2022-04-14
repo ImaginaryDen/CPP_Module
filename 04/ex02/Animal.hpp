@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-class Animal
+class  Animal
 {
 protected:
 	std::string	_type;

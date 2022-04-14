@@ -2,11 +2,11 @@
 
 Dog::Dog() : Animal("Dog")
 {
-	_brain = new Brain("i'm dog");
+	_brain = new Brain();
 	std::cout << "Dog is created." << std::endl;
 }
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& dog) : Animal::Animal()
 {
 	operator=(dog);
 	std::cout << "Dog copied." << std::endl;
@@ -28,6 +28,5 @@ Dog::~Dog()
 
 void	Dog::makeSound(void) const
 {
-	std::cout << _brain->GetIdea() << std::endl;
 	std::cout << "Woof" << std::endl;
 }

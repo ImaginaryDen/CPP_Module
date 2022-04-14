@@ -2,11 +2,11 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	_brain = new Brain("i'm cat");
+	_brain = new Brain();
 	std::cout << "Cat is created." << std::endl;
 }
 
-Cat::Cat(const Cat& cat)
+Cat::Cat(const Cat& cat) : Animal::Animal()
 {
 	operator=(cat);
 	std::cout << "Cat copied." << std::endl;
@@ -28,6 +28,5 @@ Cat::~Cat()
 
 void	Cat::makeSound(void) const
 {
-	std::cout << _brain->GetIdea() << std::endl;
 	std::cout << "Meow" << std::endl;
 }

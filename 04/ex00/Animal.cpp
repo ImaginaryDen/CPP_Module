@@ -8,7 +8,7 @@ Animal::Animal(std::string type)
 
 Animal::Animal(const Animal& animal)
 {
-	_type = animal._type;
+	operator=(animal);
 	std::cout << "Animal is copied." << std::endl;
 }
 

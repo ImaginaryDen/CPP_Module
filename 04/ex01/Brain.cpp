@@ -1,15 +1,14 @@
 #include "Brain.hpp"
 
-Brain::Brain(std::string idea)
+Brain::Brain()
 {
-	_idea = idea;
 	std::cout << "Brain is created." << std::endl;
 }
-std::string Brain::GetIdea() const
-{return _idea;}
 
 Brain::~Brain()
-{std::cout << "Brain is deleted." << std::endl;}
+{
+	std::cout << "Brain is destroyed." << std::endl;
+}
 
 Brain::Brain(const Brain& brain)
 {
@@ -19,6 +18,7 @@ Brain::Brain(const Brain& brain)
 
 Brain& Brain::operator=(const Brain& brain)
 {
-	_idea = brain._idea;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = brain._ideas[i];
 	return *this;
 }
