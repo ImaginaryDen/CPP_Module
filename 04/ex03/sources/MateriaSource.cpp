@@ -33,9 +33,10 @@ void MateriaSource::learnMateria(AMateria* materia)
 	for (i = 0; i < 4; i++)
 	{
 		if (!materials[i])
+		{
 			materials[i] = materia->clone();
-		if (materials[i]->getType() == materia->getType())
 			return;
+		}
 	}
 }
 
