@@ -9,13 +9,15 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(const Dog& dog) : Animal::Animal()
 {
 	operator=(dog);
+	_brain = NULL;
 	std::cout << "Dog copied." << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& dog)
 {
 	Animal::operator=(dog);
-	delete _brain;
+	if(_brain)
+		delete _brain;
 	_brain = new Brain(*dog._brain);
 	return *this;
 }

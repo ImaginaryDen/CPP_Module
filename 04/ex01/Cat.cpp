@@ -9,13 +9,15 @@ Cat::Cat() : Animal("Cat")
 Cat::Cat(const Cat& cat) : Animal::Animal()
 {
 	operator=(cat);
+	_brain = NULL;
 	std::cout << "Cat copied." << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& cat)
 {
 	Animal::operator=(cat);
-	delete _brain;
+	if(_brain)
+		delete _brain;
 	_brain = new Brain(*cat._brain);
 	return *this;
 }
