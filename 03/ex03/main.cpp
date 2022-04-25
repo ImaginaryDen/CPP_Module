@@ -2,7 +2,7 @@
 
 int		main()
 {
-	DiamondTrap	diamond1("44444444444444444");
+	DiamondTrap	diamond1("man");
 
 	diamond1.takeDamage(50);
 	diamond1.beRepaired(20);
@@ -15,5 +15,7 @@ int		main()
 	diamond1.whoAmI();
 	diamond2.whoAmI();
 	diamond3.whoAmI();
+	diamond1.guardGate();
+	diamond1.highFivesGuys();
 	return 0;
 }
