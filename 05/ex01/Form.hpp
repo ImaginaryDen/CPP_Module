@@ -9,11 +9,8 @@ class Form
 private:
 	const std::string	name;
 	bool				is_signed;
-	const int	grade_to_sign;
-	const int	grade_to_execute;
-
-	Form();
-	Form& operator=(const Form& copy);
+	const int			grade_to_sign;
+	const int			grade_to_execute;
 
 public:
 	class GradeTooHighException : public std::exception
@@ -31,8 +28,10 @@ public:
 		virtual const char* what() const throw();
 	};
 
+	Form();
 	Form(std::string name, unsigned int gts, unsigned int gte);
 	Form(const Form& copy);
+	Form& operator=(const Form& copy);
 	~Form();
 
 	const std::string& getName() const;

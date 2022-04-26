@@ -12,12 +12,10 @@ private:
 	const int	grade_to_sign;
 	const int	grade_to_execute;
 
-
-public:
-
 	Form();
 	Form& operator=(const Form& copy);
-	
+
+public:
 	class GradeTooHighException : public std::exception
 	{
 		virtual const char* what() const throw();
