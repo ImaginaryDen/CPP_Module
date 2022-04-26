@@ -4,10 +4,12 @@
 #include <cerrno>
 #include <iomanip>
 
-double to_double(const std::string &s)
+double to_double(std::string &s)
 {
 	char *end;
 	errno = 0;
+	if(s[s.size() - 1] == 'f')
+		s[s.size() - 1] = 0;
 	double result = std::strtod(s.c_str(), &end);
 	if (errno == ERANGE)
 		throw std::out_of_range("todouble: string is out of range");
@@ -62,6 +64,18 @@ void cast_double(std::string str)
 	}
 }
 
+void cast_float(std::string str)
+{
+	try
+	{
+		std::cout  << std::fixed << std::setprecision(1) << "float: " << to_double(str) << "f" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "non" << std::endl;
+	}
+}
+
 int main(int argc, char **argv)
 {
 
@@ -70,5 +84,6 @@ int main(int argc, char **argv)
 	cast_char(argv[1]);
 	cast_int(argv[1]);
 	cast_double(argv[1]);
+	cast_float(argv[1]);
 	return 0;
 }
