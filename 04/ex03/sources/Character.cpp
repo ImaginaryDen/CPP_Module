@@ -21,8 +21,13 @@ Character& Character::operator=(const Character& copy)
 {
 	name = copy.name;
 	for (unsigned int i = 0; i < 4; i++)
+	{
+		if (materials[i])
+			delete materials[i];
+		materials[i] = NULL;
 		if(copy.materials[i])
 			materials[i] = copy.materials[i]->clone();
+	}
 	return *this;
 }
 

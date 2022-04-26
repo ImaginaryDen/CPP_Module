@@ -20,11 +20,12 @@ int main()
 
 	std::cout << "\n\n";
 
-	const WrongAnimal* wrongmeta = new WrongAnimal();
-	const WrongAnimal* wrongcat = new WrongCat();
+	WrongAnimal* wrongmeta = new WrongAnimal();
+	WrongAnimal* wrongcat = new WrongCat();
 
 	wrongcat->makeSound();
 	wrongmeta->makeSound();
+	
 	std::cout << "WrongCat type: " << wrongcat->getType() << " " << std::endl;
 
 	delete wrongcat;

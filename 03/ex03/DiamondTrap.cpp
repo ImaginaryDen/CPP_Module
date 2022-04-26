@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-	: ClapTrap("_clap_name"), FragTrap("frag"), ScavTrap("scav")
+	: ClapTrap("dude_clap_name"), FragTrap("frag"), ScavTrap("scav")
 {
 	_name = "dude";
 	FragTrap::_hit_points = 100;
@@ -37,6 +37,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& diamondtrap)
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& diamondtrap)
 {
+	_name = diamondtrap._name;
 	ClapTrap::operator=(diamondtrap);
 	return (*this);
 }

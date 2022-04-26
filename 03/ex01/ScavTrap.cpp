@@ -42,36 +42,13 @@ void	ScavTrap::guardGate()
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (_energy_points > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
 		_energy_points--;
 		std::cout << "ScavTrap " << _name
 				<< " attacks " << target 
 				<< ", causing "<< _attack_damage  
 				<< " points of damage! " << _energy_points
-				<< " energy points remains." << std::endl;
-	}
-	else
-		std::cout << "Not enough energy points!" << std::endl;
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	_hit_points -= amount;
-	std::cout << "ScavTrap " << _name 
-			<< " recieved " << amount
-			<< " points of damage!" << std::endl
-			<< "hit " << _hit_points << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (_energy_points > 0)
-	{
-		_energy_points--;
-		_hit_points += amount;
-		std::cout << "ScavTrap " << _name
-				<< " has repaired himself! " << _energy_points
 				<< " energy points remains." << std::endl;
 	}
 	else
