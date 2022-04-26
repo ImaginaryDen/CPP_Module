@@ -1,4 +1,4 @@
-NAME		=	convert
+NAME		=	init
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)
@@ -6,7 +6,7 @@ OBJS_DIR 	= 	objects/
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
 
-CC			=	c++ -std=c++98
+CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror
 
 

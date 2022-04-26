@@ -8,6 +8,8 @@ double to_double(std::string &s)
 {
 	char *end;
 	errno = 0;
+	if (s.size() == 1 && !isdigit(s[0]))
+		return static_cast<double>(s[0]);
 	if(s[s.size() - 1] == 'f')
 		s[s.size() - 1] = 0;
 	double result = std::strtod(s.c_str(), &end);
@@ -21,11 +23,6 @@ double to_double(std::string &s)
 void cast_char(std::string str)
 {
 	std::cout << "char: ";
-	if (str.size() == 1 && !isdigit(str[0]))
-	{
-		std::cout << str[0] << std::endl;
-		return ;
-	}
 	try
 	{
 		if (isprint(static_cast<int>(to_double(str))))
@@ -60,7 +57,7 @@ void cast_double(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "non" << std::endl;
+		std::cout << "nan" << std::endl;
 	}
 }
 
@@ -72,13 +69,12 @@ void cast_float(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "non" << std::endl;
+		std::cout << "nan" << std::endl;
 	}
 }
 
 int main(int argc, char **argv)
 {
-
 	if(argc != 2)
 		return (1);
 	cast_char(argv[1]);
