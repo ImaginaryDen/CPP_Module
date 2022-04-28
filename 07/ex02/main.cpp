@@ -12,16 +12,11 @@ int main()
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		const int value = rand() % 10;
-		std::cout << value << " ";
 		numbers[i] = value;
 		mirror[i] = value;
 	}
-	std::cout << std::endl;
 	{
 		Array<int> tmp = numbers;
-		for(int i = 0; i < tmp.size(); i++)
-			std::cout << tmp[i] << " ";
-		std::cout << std::endl;
 		Array<int> test(tmp);
 	}
 	for (int i = 0; i < MAX_VAL; i++)

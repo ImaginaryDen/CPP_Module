@@ -14,6 +14,7 @@ public:
 	~Array();
 
 	T& operator[](int index);
+	const T& operator[](int index) const;
 	int size() const;
 };
 
@@ -52,6 +53,14 @@ Array<T>& Array<T>::operator=(const Array& copy)
 
 template <typename T>
 T& Array<T>::operator[](int index)
+{
+	if (index < 0 || index >= _size)
+		throw std::out_of_range("index out of range");
+	return _array[index];
+}
+
+template <typename T>
+const T& Array<T>::operator[](int index) const
 {
 	if (index < 0 || index >= _size)
 		throw std::out_of_range("index out of range");
