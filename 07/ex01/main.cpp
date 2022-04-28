@@ -1,29 +1,23 @@
 #include "iter.hpp"
 
-void func(int& a)
+class Awesome
 {
-	a *= a;
-}
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
+	private:
+	int _n;
+};
 
-void func2(std::string& s)
-{
-	for (size_t i = 0; i < s.length(); i++)
-		s[i] = toupper(s[i]);
-}
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-int main(void)
-{
-    int arr[] = {0, 1, 2, 3, 4, 5, 6, 8, 9, 10};
-	
-	iter(arr, 10, func);
-	for (int i = 0; i < 10; i++)
-		std::cout << arr[i] << " ";
-	std::cout << std::endl;
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
-	std::string arr2[] = {"1111", "ttetete", "rwrr4151"};
-	
-	iter(arr2, 3, func2);
-	for (int i = 0; i < 3; i++)
-		std::cout << arr2[i] << " ";
-	std::cout << std::endl;
+int main() {
+	int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+	Awesome tab2[5];
+	iter( tab, 5, print );
+	iter( tab2, 5, print );
+return 0;
 }

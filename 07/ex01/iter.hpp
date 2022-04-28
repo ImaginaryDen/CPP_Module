@@ -3,7 +3,7 @@
 #include <iostream>
 
 template <typename T>
-void iter(T* array, size_t length, void (*f)(T&))
+void iter(T* array, size_t length, void (*f)(T const &))
 {
 	if (!array)
 		throw std::invalid_argument("null pointer array");
