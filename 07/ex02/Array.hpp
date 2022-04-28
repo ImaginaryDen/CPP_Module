@@ -34,7 +34,7 @@ Array<T>::Array(const Array& copy)
 template <typename T>
 Array<T>::~Array()
 {
-	delete _array;
+	delete[] _array;
 }
 
 template <typename T>
