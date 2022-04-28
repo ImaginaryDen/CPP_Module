@@ -3,7 +3,7 @@
 #include <ctime>
 #include "Array.hpp"
 
-#define MAX_VAL 10
+#define MAX_VAL 750
 int main()
 {
 	Array<int> numbers(MAX_VAL);
