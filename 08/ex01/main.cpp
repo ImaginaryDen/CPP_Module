@@ -19,5 +19,13 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 	
+	Span sp = Span(10000);
+	std::vector<int> arr;
+	srand(time(NULL));
+	for(int i = 0; i < 10000; i++)
+		arr.push_back(rand() % 10);
+	sp.addNumber(arr.begin(), arr.end());
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }

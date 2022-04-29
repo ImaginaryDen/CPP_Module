@@ -26,3 +26,13 @@ public:
 	int shortestSpan() const; 	
 	int longestSpan() const;
 };
+
+template <typename T>
+void Span::addNumber(T iter_begin, T iter_end)
+{
+	while (iter_begin != iter_end)
+	{
+	addNumber(*iter_begin);
+	iter_begin++;
+	}
+}
