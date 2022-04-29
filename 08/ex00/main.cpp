@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "ft_find.hpp"
+#include "easyfind.hpp"
 
 int main()
 {
@@ -12,7 +12,14 @@ int main()
 
 	try
 	{
-		int n = easyfind(vec, 7);
+		int n = easyFind(vec, 7);
+		std::cout << n << std::endl;
+	}catch(std::exception &e)
+	{std::cout << e.what() << std::endl;}
+
+	try
+	{
+		int n = easyFind(vec, 2);
 		std::cout << n << std::endl;
 	}catch(std::exception &e)
 	{std::cout << e.what() << std::endl;}

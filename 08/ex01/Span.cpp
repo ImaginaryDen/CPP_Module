@@ -1,9 +1,5 @@
 #include "Span.hpp"
 
-Span::Span()
-	: _max_size(0)
-{}
-
 Span::Span(unsigned int n)
 	: _max_size(n)
 {}
@@ -23,7 +19,7 @@ Span& Span::operator=(const Span& copy)
 	return *this;
 }
 
-void Span::addNumber(int n)
+void Span::addNumber(const int n)
 {
 	if (_values.size() >= _max_size)
 		throw std::length_error("span is full");
@@ -33,14 +29,14 @@ void Span::addNumber(int n)
 int Span::shortestSpan() const
 {
 	std::set<int>::iterator it_set = _values.begin();
-	int min = *_values.end();
+	int min = INT32_MAX;
 	if (_values.size() < 2)
 		throw std::exception();
 	while(1)
 	{
 		int temp = *it_set;
 		it_set++;
-		if(it_set == _values.end())
+		if(it_set == _values.end() || !min)
 			break;
 		if(*it_set - temp < min)
 			min = *it_set - temp;
@@ -53,4 +49,14 @@ int Span::longestSpan() const
 	if (_values.size() < 2)
 		throw std::exception();
 	return (*_values.crbegin() - *_values.begin());
+}
+
+template <typename T>
+void Span::addNumber(T iter_begin, T iter_end)
+{
+  while (iter_begin != iter_end)
+  {
+    this->addNumber(*iter_begin);
+    iter_begin++;
+  }
 }

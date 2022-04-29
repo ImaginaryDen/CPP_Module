@@ -5,23 +5,24 @@
 #include <stdint.h>
 #include <cmath>
 #include <set>
+#include <vector>
 
 class Span
 {
 private:
 	size_t				_max_size;
-	std::set<int>		_values;
-
-	Span();
+	std::multiset<int>		_values;
 
 public:
-	Span(unsigned int n);
+	Span(unsigned int n = 0);
 	Span(const Span& copy);
 	~Span();
 
 	Span& operator=(const Span& copy);
 
-	void addNumber(int n);
+	void addNumber(const int n);
+	template <typename T>
+	void addNumber(T iter_begin, T iter_end);
 	int shortestSpan() const; 	
 	int longestSpan() const;
 };
